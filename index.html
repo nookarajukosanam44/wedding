@@ -8,6 +8,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
 
 <style>
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     margin:0;
     font-family:'Poppins',sans-serif;
@@ -35,7 +39,6 @@ nav a{
 }
 
 /* HERO */
-/* 👉 CHANGE IMAGE HERE */
 .hero{
     height:100vh;
     background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
@@ -60,6 +63,7 @@ nav a{
 section{
     padding:80px 20px;
     text-align:center;
+    scroll-margin-top:80px;
 }
 
 h2{
@@ -85,7 +89,7 @@ h2{
 .card img{
     width:100%;
     height:220px;
-    object-fit:cover; /* 🔥 fixes all image issues */
+    object-fit:cover;
 }
 
 .card h3{
@@ -101,7 +105,7 @@ h2{
     transform:translateY(-8px);
 }
 
-/* GALLERY (PERFECT IMAGE HANDLING) */
+/* GALLERY */
 .gallery{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -110,8 +114,8 @@ h2{
 
 .gallery img{
     width:100%;
-    aspect-ratio:4/5;   /* 🔥 forces uniform shape */
-    object-fit:cover;   /* 🔥 crops nicely */
+    aspect-ratio:4/5;
+    object-fit:cover;
     border-radius:12px;
     transition:0.3s;
 }
@@ -121,7 +125,6 @@ h2{
 }
 
 /* RSVP */
-/* RSVP BOX */
 .rsvp-box{
     max-width:400px;
     margin:40px auto;
@@ -132,7 +135,6 @@ h2{
     box-shadow:0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* INPUTS */
 .rsvp-box input,
 .rsvp-box textarea,
 .rsvp-box select{
@@ -141,10 +143,8 @@ h2{
     margin:10px 0;
     border-radius:8px;
     border:1px solid #ddd;
-    font-size:14px;
 }
 
-/* BUTTON */
 .rsvp-box button{
     width:100%;
     padding:12px;
@@ -154,7 +154,6 @@ h2{
     font-weight:bold;
     border-radius:10px;
     cursor:pointer;
-    transition:0.3s;
 }
 
 .rsvp-box button:hover{
@@ -232,7 +231,7 @@ footer{
 </div>
 </section>
 
-<section>
+<section id="gallery">
 <h2>Gallery</h2>
 <div class="gallery">
 <img src="PHOTO_1.jpg">
@@ -254,7 +253,6 @@ footer{
 <form onsubmit="return submitForm()">
 
 <input type="text" placeholder="Your Name" required>
-
 <input type="tel" placeholder="Mobile Number">
 
 <select required>
@@ -276,15 +274,6 @@ footer{
 </footer>
 
 <script>
-var date = new Date("June 12, 2026 11:00:00").getTime();
-
-setInterval(()=>{
-    var now = new Date().getTime();
-    var gap = date - now;
-    var days = Math.floor(gap/(1000*60*60*24));
-    document.getElementById("countdown")?.innerHTML = days+" Days Left";
-},1000);
-
 function submitForm(){
     alert("Thank you!");
     return false;
