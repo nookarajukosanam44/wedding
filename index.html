@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(to bottom, #fdf6e3, #f5e6c8);
+    color:#333;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(10px);
+    padding:15px;
+    z-index:1000;
+}
+
+nav a{
+    color:#b48a2c;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* HERO */
+/* 👉 CHANGE IMAGE HERE */
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+    url('BG.jpg') center/cover no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-family:'Great Vibes';
+    font-size:70px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+/* SECTION */
+section{
+    padding:80px 20px;
+    text-align:center;
+}
+
+h2{
+    font-family:'Playfair Display';
+    color:#b48a2c;
+}
+
+/* EVENTS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover; /* 🔥 fixes all image issues */
+}
+
+.card h3{
+    margin:10px;
+    color:#b48a2c;
+}
+
+.card p{
+    padding:0 10px 15px;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+/* GALLERY (PERFECT IMAGE HANDLING) */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:4/5;   /* 🔥 forces uniform shape */
+    object-fit:cover;   /* 🔥 crops nicely */
+    border-radius:12px;
+    transition:0.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+/* RSVP */
+/* RSVP BOX */
+.rsvp-box{
+    max-width:400px;
+    margin:40px auto;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.6);
+    backdrop-filter:blur(15px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* INPUTS */
+.rsvp-box input,
+.rsvp-box textarea,
+.rsvp-box select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:8px;
+    border:1px solid #ddd;
+    font-size:14px;
+}
+
+/* BUTTON */
+.rsvp-box button{
+    width:100%;
+    padding:12px;
+    background:linear-gradient(45deg,#b48a2c,#d4af37);
+    border:none;
+    color:white;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.rsvp-box button:hover{
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+footer{
+    background:#b48a2c;
+    color:white;
+    padding:20px;
+}
+
+/* ANIMATION */
+.fade{
+    animation:fadeIn 2s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#events">Events</a>
+<a href="#gallery">Gallery</a>
+<a href="#rsvp">RSVP</a>
+</nav>
+
+<div class="hero fade" id="home">
+<div>
+<h1>Narasing & Sony</h1>
+<p>With God's Blessings & Family Love</p>
+</div>
+</div>
+
+<section>
+<h2>Our Story</h2>
+<p>A beautiful journey blessed by faith and tradition.</p>
+</section>
+
+<section id="events">
+<h2>Wedding Events</h2>
+<div class="cards">
+
+<div class="card">
+<img src="haldi.jpg">
+<h3>Haldi</h3>
+<p>Traditional turmeric ceremony</p>
+</div>
+
+<div class="card">
+<img src="mehendi.webp">
+<h3>Mehendi</h3>
+<p>Celebration with colors & music</p>
+</div>
+
+<div class="card">
+<img src="wedding.webp">
+<h3>Church Wedding</h3>
+<p>Holy matrimony before God</p>
+</div>
+
+<div class="card">
+<img src="reception.jpg">
+<h3>Reception</h3>
+<p>Celebration with family & friends</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Gallery</h2>
+<div class="gallery">
+<img src="PHOTO_1.jpg">
+<img src="PHOTO_2.jpg">
+<img src="PHOTO_3.jpg">
+<img src="PHOTO_4.jpg">
+</div>
+</section>
+
+<section>
+<h2>Venue Location</h2>
+<iframe src="https://maps.google.com/maps?q=church&t=&z=13&ie=UTF8&iwloc=&output=embed" width="80%" height="300"></iframe>
+</section>
+
+<section id="rsvp">
+<h2>RSVP</h2>
+
+<div class="rsvp-box">
+<form onsubmit="return submitForm()">
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="tel" placeholder="Mobile Number">
+
+<select required>
+<option value="">Will you attend?</option>
+<option>Yes, I will be there</option>
+<option>No, sorry</option>
+</select>
+
+<textarea placeholder="Your message"></textarea>
+
+<button type="submit">Confirm</button>
+
+</form>
+</div>
+</section>
+
+<footer>
+<p>With Love ❤️ Narasing & Sony</p>
+</footer>
+
+<script>
+var date = new Date("June 12, 2026 11:00:00").getTime();
+
+setInterval(()=>{
+    var now = new Date().getTime();
+    var gap = date - now;
+    var days = Math.floor(gap/(1000*60*60*24));
+    document.getElementById("countdown")?.innerHTML = days+" Days Left";
+},1000);
+
+function submitForm(){
+    alert("Thank you!");
+    return false;
+}
+</script>
+
+</body>
+</html>
